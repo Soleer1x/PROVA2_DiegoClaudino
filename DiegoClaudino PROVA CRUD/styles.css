@@ -1,0 +1,595 @@
+/* === CÓDIGO JÁ EXISTENTE NO SEU ARQUIVO === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.login-container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ccc;
+}
+
+.saudacao {
+    text-align: left;
+}
+
+.logout {
+    text-align: right;
+}
+
+.logout button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout button:hover {
+    background-color: #c9302c;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+}
+
+.menu li:hover > a {
+    background-color: #555;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#sugestoes {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    position: absolute;
+    width: 200px;
+}
+
+#sugestoes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sugestoes li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#sugestoes li:hover {
+    background-color: #ddd;
+}
+
+/* Centraliza o formulário na tela */
+form {
+    width: 500px; /* Define uma largura fixa */
+    margin: 50px auto; /* Centraliza na tela */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo suave */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos dentro do formulário */
+}
+
+
+/* Ajusta as labels */
+label {
+    display: block; /* Mantém acima do campo */
+    font-weight: bold;
+    margin-bottom: 5px; /* Espaço entre label e campo */
+}
+
+/* Ajusta os campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 80%; /* Ocupa toda a largura do formulário */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Ajusta os botões */
+button {
+    width: 80%;
+    padding: 10px;
+    background-color: #007bff; /* Azul bonito */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* === CADASTRO DE FUNCIONÁRIO ESTILO MODERNO (ADICIONADO ABAIXO) === */
+.cadastro-funcionario-form {
+    width: 100%;
+    max-width: 430px;
+    margin: 40px auto 30px auto;
+    padding: 32px 26px 24px 26px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px 0 rgba(30, 30, 80, 0.13);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+    animation: entradaForm .5s cubic-bezier(.39,1.59,.57,.96);
+}
+
+@keyframes entradaForm {
+    from { opacity: 0; transform: translateY(15px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.cadastro-funcionario-form label {
+    font-weight: 500;
+    color: #4f4f80;
+    text-align: left;
+    margin-bottom: 2px;
+    letter-spacing: .5px;
+    font-size: 1.03rem;
+}
+
+.cadastro-funcionario-form input[type="text"],
+.cadastro-funcionario-form input[type="email"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.8px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 1.07rem;
+    background: #f7fafc;
+    transition: border .2s;
+    margin-bottom: 7px;
+}
+
+.cadastro-funcionario-form input[type="text"]:focus,
+.cadastro-funcionario-form input[type="email"]:focus {
+    border: 1.8px solid #6c63ff;
+    outline: none;
+    background: #eef0ff;
+}
+
+.cadastro-funcionario-form button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    background: linear-gradient(90deg,#6c63ff 0%, #48b1f3 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.13rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, box-shadow .2s;
+    box-shadow: 0 2px 12px rgba(76, 81, 255, 0.07);
+    letter-spacing: 1px;
+}
+
+.cadastro-funcionario-form button:hover {
+    background: linear-gradient(90deg,#48b1f3 0%, #6c63ff 100%);
+    box-shadow: 0 4px 20px rgba(76, 81, 255, 0.13);
+}
+
+.cadastro-funcionario-form a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.07rem;
+    transition: color .18s;
+}
+
+.cadastro-funcionario-form a:hover {
+    color: #48b1f3;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .cadastro-funcionario-form {
+        max-width: 96vw;
+        padding: 18px 2vw;
+    }
+}
+
+
+
+
+/* === TABELAS MODERNAS PARA FUNCIONÁRIOS === */
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 35px auto 25px auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px 0 rgba(30, 30, 80, 0.11);
+    font-size: 1rem;
+}
+
+th, td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e7ff;
+    text-align: left;
+}
+
+th {
+    background: #6c63ff;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background: #f4f7fd;
+}
+
+tr:hover {
+    background: #e0e7ff;
+    transition: background .2s;
+}
+
+a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .18s;
+}
+
+a:hover {
+    color: #48b1f3;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    table {
+        font-size: 0.93rem;
+        width: 99vw;
+    }
+    th, td {
+        padding: 7px 6px;
+    }
+}
+
+
+/* === FORMULÁRIO DE CADASTRO DE FUNCIONÁRIO PROFISSIONAL E ORGANIZADO === */
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8faff 0%, #e2e6f3 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: #23233b;
+}
+
+/* Título centralizado */
+h2, .main-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2rem;
+    color: #181843;
+    letter-spacing: .5px;
+    font-weight: 700;
+}
+
+/* Container do formulário */
+.cadastro-funcionario-form {
+    width: 100%;
+    max-width: 440px;
+    margin: 44px auto 0 auto;
+    padding: 38px 32px 34px 32px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 36px 0 rgba(39, 56, 120, 0.15), 0 1.5px 8px 0 rgba(108,99,255,0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeInForm .6s cubic-bezier(.39,1.59,.57,.96);
+    position: relative;
+}
+
+@keyframes fadeInForm {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Labels */
+.cadastro-funcionario-form label {
+    font-weight: 600;
+    color: #30305f;
+    text-align: left;
+    font-size: 1.10rem;
+    margin-bottom: 7px;
+    letter-spacing: 0.02em;
+    display: block;
+}
+
+/* Inputs */
+.cadastro-funcionario-form input[type="text"],
+.cadastro-funcionario-form input[type="email"] {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #dde2f8;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    background: #f6f8fe;
+    color: #27274a;
+    margin-bottom: 2px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+.cadastro-funcionario-form input[type="text"]:focus,
+.cadastro-funcionario-form input[type="email"]:focus {
+    border-color: #6c63ff;
+    background: #f0f3ff;
+    box-shadow: 0 0 0 2px #b6b3ff48;
+}
+
+/* Botões organizados na horizontal e responsivos */
+.cadastro-funcionario-form .button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: flex-start;
+    margin-top: 12px;
+}
+
+.cadastro-funcionario-form button {
+    flex: 1 1 0;
+    padding: 13px 0;
+    background: linear-gradient(90deg,#6c63ff 0%, #3db3fa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 23px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .14s, box-shadow .16s, background .17s;
+    box-shadow: 0 2px 12px 0 rgba(108,99,255,0.12);
+    letter-spacing: .7px;
+    outline: none;
+}
+
+.cadastro-funcionario-form button[type="reset"] {
+    background: linear-gradient(90deg,#7b5cff 0%, #53d0fc 100%);
+}
+
+.cadastro-funcionario-form button:hover,
+.cadastro-funcionario-form button:focus {
+    background: linear-gradient(90deg,#493be8 0%, #3db3fa 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 22px 0 rgba(108,99,255,0.18);
+}
+
+.cadastro-funcionario-form button[type="reset"]:hover,
+.cadastro-funcionario-form button[type="reset"]:focus {
+    background: linear-gradient(90deg,#4738c9 0%, #23c4fa 100%);
+}
+
+.cadastro-funcionario-form a {
+    display: block;
+    text-align: center;
+    margin: 38px auto 0 auto;
+    color: #7c70ff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .18s;
+    letter-spacing: .5px;
+}
+
+.cadastro-funcionario-form a:hover {
+    color: #3db3fa;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 650px) {
+    .cadastro-funcionario-form {
+        max-width: 99vw;
+        padding: 18px 2vw 18px 2vw;
+        border-radius: 13px;
+    }
+    .cadastro-funcionario-form .button-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cadastro-funcionario-form {
+        gap: 13px;
+        padding: 8vw 1vw;
+    }
+}
+
+/* === ALTERAR FUNCIONÁRIO - VISUAL MODERNO E ISOLADO === */
+.alterar-funcionario-form {
+    width: 100%;
+    max-width: 440px;
+    margin: 44px auto 0 auto;
+    padding: 38px 32px 34px 32px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 36px 0 rgba(39, 56, 120, 0.13), 0 1.5px 8px 0 rgba(108,99,255,0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeInAlterar .6s cubic-bezier(.39,1.59,.57,.96);
+    position: relative;
+}
+
+@keyframes fadeInAlterar {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.alterar-funcionario-form label {
+    font-weight: 600;
+    color: #23233b;
+    text-align: left;
+    font-size: 1.10rem;
+    margin-bottom: 7px;
+    letter-spacing: .02em;
+    display: block;
+}
+
+.alterar-funcionario-form input[type="text"],
+.alterar-funcionario-form input[type="email"] {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #dde2f8;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    background: #f6f8fe;
+    color: #23233b;
+    margin-bottom: 4px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+.alterar-funcionario-form input[type="text"]:focus,
+.alterar-funcionario-form input[type="email"]:focus {
+    border-color: #6c63ff;
+    background: #f0f3ff;
+    box-shadow: 0 0 0 2px #b6b3ff3a;
+}
+
+.alterar-funcionario-form button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    background: linear-gradient(90deg,#4d88ff 0%, #007bff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    font-size: 1.13rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .18s, box-shadow .14s;
+    box-shadow: 0 2px 12px rgba(76, 81, 255, 0.11);
+    letter-spacing: .7px;
+}
+
+.alterar-funcionario-form button[type="reset"] {
+    background: linear-gradient(90deg,#42a3fc 0%, #167cff 100%);
+}
+
+.alterar-funcionario-form button:hover,
+.alterar-funcionario-form button:focus {
+    background: linear-gradient(90deg,#007bff 0%, #4d88ff 100%);
+    box-shadow: 0 6px 22px 0 rgba(76, 81, 255, 0.14);
+}
+
+.alterar-funcionario-form button[type="reset"]:hover,
+.alterar-funcionario-form button[type="reset"]:focus {
+    background: linear-gradient(90deg,#167cff 0%, #42a3fc 100%);
+}
+
+.alterar-funcionario-form button + button {
+    margin-top: 12px;
+}
+
+/* Link "Voltar" só para essa tela */
+.alterar-funcionario-form + a {
+    display: block;
+    text-align: center;
+    margin: 38px auto 0 auto;
+    color: #6c63ff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .18s;
+    letter-spacing: .5px;
+}
+.alterar-funcionario-form + a:hover {
+    color: #48b1f3;
+    text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .alterar-funcionario-form {
+        max-width: 97vw;
+        padding: 17px 2vw 17px 2vw;
+        border-radius: 10px;
+        gap: 10px;
+    }
+}
